@@ -1,0 +1,26 @@
+{% include 'recipes/partials/head.html' %}
+
+
+<body>
+    {% include 'recipes/partials/header.html' %}
+    {% include 'recipes/partials/search.html' %}
+    <main class="main-content-container">
+        <div class="main-content main-content-list container">
+            {%include 'recipes/partials/recipe.html'%}
+            {%include 'recipes/partials/recipe.html'%}
+            {%include 'recipes/partials/recipe.html'%}
+            {%include 'recipes/partials/recipe.html'%}
+            {%include 'recipes/partials/recipe.html'%}
+            {%include 'recipes/partials/recipe.html'%}
+            
+        </div>
+    </main>
+    <footer class="recipe-footer">
+        <a class="recipe-read-more button button-dark button-full-width" href="/recipes/3/">
+            <i class="fas fa-eye"></i>
+            <span>ver mais...</span>
+        </a>
+    </footer>
+</body>
+
+</html>
