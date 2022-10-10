@@ -24,9 +24,5 @@ class RecipeViewsTest(TestCase):
         self.assertIs(view.func, views.home)
 
     def test_recipe_category_views_function_is_correct(self):
-    view = resolve(reverse('recipes:home'))
-    self.assertIs(view.func, views.home)
-
-    def test_recipe_detail_views_function_is_correct(self):
-    view = resolve(reverse('recipes:home'))
-    self.assertIs(view.func, views.home)
+        view = resolve(reverse('recipes:category', kwargs={'category_id': 1}))
+        self.assertIs(view.func, views.category)
