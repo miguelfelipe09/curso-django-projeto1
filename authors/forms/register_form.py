@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+
 from utils.django_forms import add_placeholder, strong_password
 
 
@@ -29,11 +30,17 @@ class RegisterForm(forms.ModelForm):
     )
     first_name = forms.CharField(
         error_messages={'required': 'Digite seu nome.'},
-        label='Nome'
+        label='Nome',
+        help_text=(
+            'Write your first name'
+        )
     )
     last_name = forms.CharField(
         error_messages={'required': 'Digite seu sobrenome.'},
-        label='Sobrenome'
+        label='Sobrenome',
+        help_text=(
+            'Write your last name'
+        )
     )
     email = forms.EmailField(
         error_messages={'required': 'E-mail é obrigatório'},
@@ -48,11 +55,7 @@ class RegisterForm(forms.ModelForm):
         error_messages={
             'required': 'A senha não deve estar vazia.'
         },
-        help_text=(
-            'A senha deve ter pelo menos uma letra maiúscula,'
-            'uma letra minúscula e um número. O comprimento deve ser '
-            'pelo menos 8 caracteres.'
-        ),
+
         validators=[strong_password],
         label='Senha'
     )
